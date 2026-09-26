@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Minecraft-styled scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #373737;
+  border-left: 2px solid #1E1E1E;
+}
+::-webkit-scrollbar-thumb {
+  background: #8F8F8F;
+  border: 2px solid #FFFFFF;
+  border-right-color: #373737;
+  border-bottom-color: #373737;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B4B4B4;
+}
+
+/* Pixel art rendering crispness */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Minecraft stone dialog/panel border */
+.mc-panel {
+  background-color: #C6C6C6;
+  border: 4px solid #373737;
+  box-shadow: 
+    inset -4px -4px 0px 0px #555555,
+    inset 4px 4px 0px 0px #FFFFFF;
+}
+
+.mc-panel-dark {
+  background-color: #212121;
+  border: 4px solid #000000;
+  box-shadow: 
+    inset -3px -3px 0px 0px #373737,
+    inset 3px 3px 0px 0px #555555;
+}
+
+/* Minecraft GUI Item Slot */
+.mc-slot {
+  background-color: #8B8B8B;
+  box-shadow: 
+    inset 2px 2px 0px 0px #373737,
+    inset -2px -2px 0px 0px #FFFFFF;
+}
+
+.mc-slot:hover {
+  background-color: #A0A0A0;
+}
+
+.mc-slot.active {
+  box-shadow: 
+    inset 2px 2px 0px 0px #FFFFFF,
+    inset -2px -2px 0px 0px #373737,
+    0 0 6px #FFFFFF;
+}
+
+/* Minecraft Green Button */
+.mc-btn-green {
+  background: #4DA239;
+  border: 3px solid #1b3814;
+  box-shadow: 
+    inset -3px -4px 0px 0px #2a5c1f,
+    inset 3px 3px 0px 0px #7ae663;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 0px #1a3814;
+  transition: transform 0.05s ease;
+}
+
+.mc-btn-green:hover {
+  background: #56b540;
+  box-shadow: 
+    inset -3px -4px 0px 0px #316c24,
+    inset 3px 3px 0px 0px #8df776;
+}
+
+.mc-btn-green:active {
+  background: #3c822c;
+  box-shadow: 
+    inset 3px 4px 0px 0px #1a3814,
+    inset -3px -3px 0px 0px #56b540;
+  transform: translateY(2px);
+}
+
+/* Minecraft Stone Button */
+.mc-btn-stone {
+  background: #7E7E7E;
+  border: 3px solid #2B2B2B;
+  box-shadow: 
+    inset -3px -4px 0px 0px #4A4A4A,
+    inset 3px 3px 0px 0px #BCBCBC;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 0px #2B2B2B;
+  transition: transform 0.05s ease;
+}
+
+.mc-btn-stone:hover {
+  background: #8E8E8E;
+  box-shadow: 
+    inset -3px -4px 0px 0px #5A5A5A,
+    inset 3px 3px 0px 0px #CCCCCC;
+}
+
+.mc-btn-stone:active {
+  background: #6A6A6A;
+  box-shadow: 
+    inset 3px 4px 0px 0px #2B2B2B,
+    inset -3px -3px 0px 0px #8E8E8E;
+  transform: translateY(2px);
+}
+
+/* Minecraft Diamond / Blue Button */
+.mc-btn-diamond {
+  background: #2ea8a4;
+  border: 3px solid #104543;
+  box-shadow: 
+    inset -3px -4px 0px 0px #1a6663,
+    inset 3px 3px 0px 0px #5efaf6;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 0px #104543;
+  transition: transform 0.05s ease;
+}
+
+.mc-btn-diamond:hover {
+  background: #39bfbb;
+  box-shadow: 
+    inset -3px -4px 0px 0px #227a77,
+    inset 3px 3px 0px 0px #85fffc;
+}
+
+.mc-btn-diamond:active {
+  background: #238784;
+  box-shadow: 
+    inset 3px 4px 0px 0px #104543,
+    inset -3px -3px 0px 0px #39bfbb;
+  transform: translateY(2px);
+}
+
+/* Minecraft Tooltip */
+.mc-tooltip {
+  background: rgba(16, 0, 16, 0.95);
+  border: 2px solid #28004f;
+  box-shadow: 
+    inset 1px 1px 0px 0px #50009c,
+    inset -1px -1px 0px 0px #50009c,
+    0 4px 12px rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Blocky pixel borders for cards */
+.mc-card-border {
+  border: 4px solid #1E1E1E;
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Pixel clouds background styling */
+.cloud-shape-1 {
+  width: 140px;
+  height: 48px;
+  background: #FFFFFF;
+  box-shadow: 
+    20px -16px 0 0 #FFFFFF,
+    60px -8px 0 0 #FFFFFF,
+    80px 8px 0 0 #FFFFFF,
+    -16px 8px 0 0 #FFFFFF;
+  opacity: 0.85;
+}
+
+.cloud-shape-2 {
+  width: 200px;
+  height: 56px;
+  background: #FFFFFF;
+  box-shadow: 
+    30px -20px 0 0 #FFFFFF,
+    80px -12px 0 0 #FFFFFF,
+    120px 10px 0 0 #FFFFFF,
+    -24px 10px 0 0 #FFFFFF;
+  opacity: 0.9;
+}
