@@ -16,17 +16,30 @@ export default function SkillsInventory() {
   ];
 
   const skillsData = [
+    // AI / ML & Learning
+    {
+      name: 'AI & Machine Learning',
+      category: 'core',
+      stack: 32,
+      durability: 80,
+      rarity: 'Rare',
+      rarityColor: 'text-[#55FFFF]',
+      icon: '🧠',
+      level: 'Learning & Exploring',
+      lore: 'Studying foundational machine learning concepts, models, and Python for upcoming intelligent projects.',
+      details: ['ML Fundamentals', 'Python & Math', 'Upcoming AI Projects']
+    },
     // Frameworks
     {
       name: 'Spring Boot',
       category: 'frameworks',
       stack: 64,
       durability: 96,
-      rarity: 'Legendary',
-      rarityColor: 'text-[#FFAA00]',
+      rarity: 'Epic',
+      rarityColor: 'text-[#AA00AA]',
       icon: '🍃',
-      level: 'Advanced',
-      lore: 'Enterprise Java framework used to build robust REST APIs, layered architecture, and production backends.',
+      level: 'Experienced',
+      lore: 'Java framework used to build RESTful APIs and backend services in MessTrack and Job Tracker.',
       details: ['MessTrack backend', 'Job Tracker API', 'DTO mapping', '@ControllerAdvice']
     },
     {
@@ -34,12 +47,12 @@ export default function SkillsInventory() {
       category: 'frameworks',
       stack: 48,
       durability: 88,
-      rarity: 'Epic',
-      rarityColor: 'text-[#AA00AA]',
+      rarity: 'Rare',
+      rarityColor: 'text-[#55FFFF]',
       icon: '🛡️',
       level: 'Proficient',
-      lore: 'Ironclad security layer managing JWT authentication, BCrypt password encryption, and Role-Based Access Control.',
-      details: ['JWT Authentication', 'Role-Based Access (RBAC)', 'Stateless Sessions']
+      lore: 'Security layer for JWT authentication, password hashing, and role-based access control.',
+      details: ['JWT Authentication', 'Role-Based Access (RBAC)', 'Protected CRUD']
     },
     {
       name: 'React.js',
@@ -49,9 +62,9 @@ export default function SkillsInventory() {
       rarity: 'Epic',
       rarityColor: 'text-[#AA00AA]',
       icon: '⚛️',
-      level: 'Advanced',
-      lore: 'Reactive frontend library used to build single-page applications with dynamic state management and clean UI.',
-      details: ['Component Architecture', 'Hooks & Context', 'Responsive Dashboards']
+      level: 'Proficient',
+      lore: 'Frontend library for building responsive user interfaces and single-page web apps.',
+      details: ['Component Architecture', 'State & Hooks', 'MessTrack Web App']
     },
 
     // Languages

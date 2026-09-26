@@ -38,7 +38,7 @@ export default function Navbar({ soundEnabled, setSoundEnabled, onOpenResume }) 
               </span>
             </div>
             <p className="text-gray-400 text-xs hidden sm:block font-mono">
-              Backend & Full-Stack Crafter
+              Computer Science Student & Developer
             </p>
           </div>
         </div>

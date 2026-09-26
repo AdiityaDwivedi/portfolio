@@ -22,9 +22,9 @@ export default function StatsBanner() {
     },
     {
       icon: Code2,
-      label: "CORE ARSENAL",
-      value: "Java, Spring Boot & React",
-      sub: "PostgreSQL, MySQL, REST APIs, JWT",
+      label: "INTERESTS & FOCUS",
+      value: "Software & AI / ML",
+      sub: "Web Development, Algorithms & Machine Learning",
       color: "text-[#17DD62]",
       border: "border-[#17DD62]/40",
     },
