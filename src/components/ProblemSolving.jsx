@@ -1,7 +1,7 @@
 import React from 'react';
 import confetti from 'canvas-confetti';
 import { sound } from '../utils/audio';
-import { Trophy, Swords, Zap, ExternalLink, Code2, Award, Flame } from 'lucide-react';
+import { Trophy, Swords, Zap, ExternalLink, Code2, Award, Flame, Sparkles } from 'lucide-react';
 
 export default function ProblemSolving() {
   const triggerCelebration = () => {

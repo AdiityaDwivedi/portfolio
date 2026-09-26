@@ -39,10 +39,10 @@ class ErrorBoundary extends React.Component {
             color: '#000000',
             boxShadow: 'inset -4px -4px 0px 0px #555555, inset 4px 4px 0px 0px #FFFFFF'
           }}>
-            <h1 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '12px', color: '#B00000' }}>
-              ⚠️ YOU DIED! (Chunk Rendering Exception)
+            <h1 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '12px', color: '#4DEEEA' }}>
+              ⚡ SPAWN POINT (Glitch Detected)
             </h1>
-            <p style={{ fontSize: '14px', marginBottom: '16px' }}>
+            <p style={{ fontSize: '14px', marginBottom: '16px', color: '#222222' }}>
               {this.state.error?.message || "An unexpected block glitch occurred."}
             </p>
             <button
@@ -53,10 +53,11 @@ class ErrorBoundary extends React.Component {
                 border: '3px solid #1b3814',
                 padding: '8px 16px',
                 fontWeight: 'bold',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                fontFamily: 'monospace'
               }}
             >
-              RESPAWN (RELOAD WORLD)
+              RESPAWN AT SPAWN POINT
             </button>
           </div>
         </div>
