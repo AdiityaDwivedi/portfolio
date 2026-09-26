@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <script>
+      window.addEventListener('error', function(e) {
+        console.error('Window error caught:', e.message, e.filename, e.lineno);
+      });
+    </script>
   </head>
   <body class="bg-[#4a80d4] text-[#1E1E1E] antialiased selection:bg-mc-green selection:text-white font-body overflow-x-hidden">
     <div id="root"></div>
