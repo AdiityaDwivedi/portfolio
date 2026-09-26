@@ -43,10 +43,10 @@ export default function Navbar({ soundEnabled, setSoundEnabled, onOpenResume }) 
           </div>
         </div>
 
-        {/* Center: In-game HUD Hearts & Hunger (Interactive) */}
+        {/* Center: In-game HUD Hearts (Interactive) */}
         <div className="hidden md:flex items-center space-x-4 select-none">
           {/* Hearts */}
-          <div className="flex items-center space-x-0.5 cursor-pointer" 
+          <div className="flex items-center space-x-1 cursor-pointer" 
                title="Click to replenish health"
                onClick={handleHeartClick}>
             {Array.from({ length: 10 }).map((_, i) => (
@@ -57,14 +57,6 @@ export default function Navbar({ soundEnabled, setSoundEnabled, onOpenResume }) 
                 ♥
               </span>
             ))}
-          </div>
-
-          {/* Level XP Orb */}
-          <div className="flex items-center space-x-1.5 bg-black/40 px-2.5 py-1 border border-white/10 rounded">
-            <span className="w-2.5 h-2.5 rounded-full bg-mc-green animate-pulse" />
-            <span className="font-minecraft text-mc-green text-xs">
-              XP 500+
-            </span>
           </div>
         </div>
 

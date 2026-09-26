@@ -50,10 +50,34 @@ export default function ProjectsAdvancements() {
         'Centralized global exception handling using @ControllerAdvice and custom domain exceptions for standardized API error diagnostics.'
       ],
       githubUrl: 'https://github.com/AdiityaDwivedi/job-tracker-api',
-      liveUrl: null, // Backend API repo
+      liveUrl: null,
       accentBorder: 'border-[#4DEEEA]',
       glowColor: 'hover:shadow-[0_0_25px_rgba(77,238,234,0.4)]',
       rarity: 'Epic Backend'
+    },
+    {
+      id: 'green-fleet',
+      title: 'Green Fleet Optimizer',
+      subtitle: 'Logistics Route & Carbon Emission Optimization',
+      category: 'Algorithms & AI/ML System',
+      icon: '🌱',
+      status: 'ACTIVE DEV',
+      statusColor: 'bg-[#55FF55] text-black',
+      advancementTitle: 'Advancement: Sustainable Pathfinding',
+      description:
+        'An algorithmic system engineered to optimize commercial delivery routes, reduce vehicle fuel consumption, and monitor carbon emission metrics.',
+      tags: ['Python', 'C++', 'Route Optimization', 'Algorithms', 'AI / ML Concepts'],
+      features: [
+        'Explores graph-based pathfinding and heuristics for multi-stop vehicle delivery routes.',
+        'Calculates carbon footprint estimates based on distance, cargo weight, and vehicle fuel efficiency.',
+        'Models load optimization algorithms to maximize delivery vehicle capacity utilization.',
+        'Designed to transform theoretical optimization logic into a practical logistics dashboard.'
+      ],
+      githubUrl: 'https://github.com/AdiityaDwivedi',
+      liveUrl: null,
+      accentBorder: 'border-[#55FF55]',
+      glowColor: 'hover:shadow-[0_0_25px_rgba(85,255,85,0.4)]',
+      rarity: 'Innovation Quest'
     }
   ];
 
@@ -75,12 +99,12 @@ export default function ProjectsAdvancements() {
             FEATURED PROJECTS & ADVANCEMENTS
           </h2>
           <p className="text-gray-400 font-mono text-sm max-w-xl mx-auto">
-            Real-world systems forged with Java, Spring Boot, and React. Inspect the loot and live deployments below.
+            Practical projects built with Spring Boot, React, and Python. Inspect the loot and deployments below.
           </p>
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((proj) => {
             const isExpanded = openedChest === proj.id;
             return (

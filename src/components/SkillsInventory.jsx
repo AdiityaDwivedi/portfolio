@@ -104,6 +104,18 @@ export default function SkillsInventory() {
       lore: 'Client-side script engine driving interactive web applications and asynchronous API communication.',
       details: ['ES6+ Syntax', 'Async/Await', 'DOM Manipulation']
     },
+    {
+      name: 'Python',
+      category: 'languages',
+      stack: 48,
+      durability: 86,
+      rarity: 'Rare',
+      rarityColor: 'text-[#55FFFF]',
+      icon: '🐍',
+      level: 'Proficient',
+      lore: 'Language for data processing, scripting, and machine learning exploration.',
+      details: ['Data Structures', 'AI/ML Prototyping', 'Automation']
+    },
 
     // Databases
     {

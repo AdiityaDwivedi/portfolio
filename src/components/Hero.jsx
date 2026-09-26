@@ -1,9 +1,10 @@
-import React from 'react';
-import MinecraftDiorama3D from './MinecraftDiorama3D';
+import React, { useState } from 'react';
 import { sound } from '../utils/audio';
-import { Download, Sword, Terminal, Sparkles, Compass } from 'lucide-react';
+import { Download, Sword, Terminal, Compass, Sparkles } from 'lucide-react';
 
 export default function Hero({ onOpenResume }) {
+  const [creeperHiss, setCreeperHiss] = useState(false);
+
   const scrollTo = (id) => {
     sound.playClick();
     const el = document.getElementById(id);
@@ -12,10 +13,16 @@ export default function Hero({ onOpenResume }) {
     }
   };
 
+  const handleCreeperClick = () => {
+    sound.playHiss();
+    setCreeperHiss(true);
+    setTimeout(() => setCreeperHiss(false), 2000);
+  };
+
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-gradient-to-b from-[#3a75c4] via-[#5b95ea] to-[#8ebcf8] pt-6 pb-28">
+    <section id="hero" className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden bg-gradient-to-b from-[#3a75c4] via-[#5b95ea] to-[#8ebcf8] pt-10 pb-20">
       
-      {/* 1. DAYTIME SKY ELEMENTS */}
+      {/* 1. SEAMLESS DAYTIME OVERWORLD SKY & SUN BACKGROUND */}
       {/* Pixel Sun */}
       <div className="absolute top-10 right-10 sm:right-24 w-20 h-20 sm:w-28 sm:h-28 bg-[#FFF875] border-4 border-[#FFAE00] shadow-[0_0_50px_rgba(255,248,117,0.85)] z-0 select-none pointer-events-none animate-pulse-subtle" />
 
@@ -23,129 +30,170 @@ export default function Hero({ onOpenResume }) {
       <div className="absolute top-12 -left-32 animate-cloud-slow pointer-events-none z-0">
         <div className="cloud-shape-2" />
       </div>
-      <div className="absolute top-48 -left-48 animate-cloud-medium pointer-events-none z-0">
+      <div className="absolute top-44 -left-48 animate-cloud-medium pointer-events-none z-0">
         <div className="cloud-shape-1 scale-125" />
       </div>
       <div className="absolute top-28 -left-64 animate-cloud-fast pointer-events-none z-0 opacity-70">
         <div className="cloud-shape-1" />
       </div>
 
-      {/* 2. TOP BANNER (Inspired by Minecraft.net "CREATE. EXPLORE. SURVIVE.") */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full text-center pt-2">
-        <div className="inline-block">
-          <p className="font-minecraft text-xs sm:text-sm tracking-widest text-[#FFF875] drop-shadow-[0_2px_0_rgba(0,0,0,0.8)] uppercase">
-            BUILD • EXPLORE • SOLVE
-          </p>
-          <h1 className="font-minecraft text-3xl sm:text-5xl lg:text-6xl text-white tracking-wide mt-1 drop-shadow-[0_4px_0_rgba(0,0,0,0.7)]">
-            ADITYA KUMAR
-          </h1>
-          <p className="font-minecraft text-xs sm:text-base text-gray-100 tracking-wider mt-1 drop-shadow-[0_2px_0_rgba(0,0,0,0.8)]">
-            COMPUTER SCIENCE STUDENT & DEVELOPER
-          </p>
-        </div>
+      {/* Distant Minecraft Hill Silhouettes in Background */}
+      <div className="absolute bottom-10 left-0 right-0 h-40 pointer-events-none z-0 opacity-25">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-full fill-[#2c5282]">
+          <polygon points="0,120 0,60 120,60 120,40 280,40 280,70 420,70 420,30 580,30 580,60 760,60 760,20 920,20 920,50 1080,50 1080,30 1200,30 1200,120" />
+        </svg>
       </div>
 
-      {/* 3. MAIN HERO GRID (Diorama + Clean Bio) */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      {/* 2. MAIN CONTENT (CLEAN, WIDE, AUTHENTIC) */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-6">
+        
+        {/* Main Intro Panel (Clean Minecraft Parchment & Border) */}
+        <div className="bg-[#EAD7B0]/95 backdrop-blur-md border-4 border-[#2B1B10] p-6 sm:p-10 shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] text-[#1E1E1E]">
           
-          {/* LEFT COLUMN: SIMPLE & AUTHENTIC ABOUT ME */}
-          <div className="lg:col-span-6 text-left space-y-5">
-            
-            {/* Coordinates / Status Pill */}
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-black/60 border border-white/30 text-white font-minecraft text-[11px] rounded shadow backdrop-blur">
+          {/* Header Title */}
+          <div className="border-b-2 border-[#8C6D3F]/50 pb-4 mb-6">
+            <div className="inline-flex items-center space-x-2 px-2.5 py-1 bg-[#2B1B10] text-mc-diamond font-minecraft text-[10px] sm:text-xs mb-3">
               <span className="w-2 h-2 bg-mc-green rounded-full animate-ping" />
               <span>SPAWN POINT: PATNA, BIHAR</span>
-              <span className="text-gray-400">|</span>
-              <span className="text-mc-diamond">B.TECH (2024–28)</span>
             </div>
-
-            {/* Simple, grounded bio (No buzzword fluff) */}
-            <div className="bg-white/85 backdrop-blur-md p-5 border-4 border-[#1E1E1E] shadow-[6px_6px_0_0_#1E1E1E] space-y-3">
-              <div className="font-minecraft text-xs text-[#2B1B10] uppercase flex items-center space-x-1.5">
-                <Compass className="w-3.5 h-3.5 text-mc-darkgreen" />
-                <span>ABOUT ADITYA</span>
-              </div>
-              <p className="text-slate-900 font-medium text-sm sm:text-base leading-relaxed font-body">
-                Hey! I'm a Computer Science Engineering student at <strong>Bakhtiyarpur College of Engineering</strong>. 
-                I enjoy building software, creating web apps, and solving problems across <strong>LeetCode & Codeforces (500+ solved)</strong>.
-              </p>
-              <p className="text-slate-800 text-sm leading-relaxed font-body">
-                Currently building with <strong>Java, Spring Boot, PostgreSQL, and React</strong>, while actively learning and exploring <strong>Artificial Intelligence & Machine Learning</strong> for upcoming projects.
-              </p>
-            </div>
-
-            {/* Quick Domain Badges */}
-            <div className="flex flex-wrap gap-2 font-minecraft text-[10px]">
-              <span className="bg-[#2B2B2B] text-white px-3 py-1.5 border border-white/20 shadow">
-                🧠 AI & ML (Learning)
-              </span>
-              <span className="bg-[#2B2B2B] text-mc-emerald px-3 py-1.5 border border-white/20 shadow">
-                ⚡ 500+ DSA Solved
-              </span>
-              <span className="bg-[#2B2B2B] text-mc-diamond px-3 py-1.5 border border-white/20 shadow">
-                🌐 Full-Stack & APIs
-              </span>
-              <span className="bg-[#2B2B2B] text-[#FFAA00] px-3 py-1.5 border border-white/20 shadow">
-                🎓 IoT Specialization
-              </span>
-            </div>
-
-            {/* Action Buttons (Minecraft Green, Diamond & Stone) */}
-            <div className="flex flex-wrap gap-3 pt-2">
-              <button
-                onClick={() => scrollTo('projects')}
-                className="mc-btn-green px-5 py-3 font-minecraft text-xs sm:text-sm flex items-center space-x-2"
-              >
-                <Sword className="w-4 h-4" />
-                <span>EXPLORE PROJECTS</span>
-              </button>
-
-              <button
-                onClick={() => {
-                  sound.playClick();
-                  onOpenResume();
-                }}
-                className="mc-btn-diamond px-5 py-3 font-minecraft text-xs sm:text-sm flex items-center space-x-2"
-              >
-                <Download className="w-4 h-4" />
-                <span>RESUME</span>
-              </button>
-
-              <button
-                onClick={() => scrollTo('contact')}
-                className="mc-btn-stone px-5 py-3 font-minecraft text-xs sm:text-sm flex items-center space-x-2"
-              >
-                <Terminal className="w-4 h-4" />
-                <span>CONTACT</span>
-              </button>
-            </div>
-
+            <h1 className="font-minecraft text-2xl sm:text-4xl lg:text-5xl text-[#2B1B10] tracking-wide">
+              Hi, I’m Aditya.
+            </h1>
           </div>
 
-          {/* RIGHT COLUMN: 3D MINECRAFT DIORAMA (CREEPER + CHERRY BLOSSOM + PIG + WATERFALL) */}
-          <div className="lg:col-span-6 relative flex flex-col items-center justify-center">
-            
-            {/* Diorama Container */}
-            <div className="w-full max-w-[540px] aspect-[4/3] bg-gradient-to-b from-white/20 to-white/5 rounded-2xl border-4 border-black/40 backdrop-blur-sm p-1 shadow-2xl relative overflow-hidden">
-              <MinecraftDiorama3D />
-            </div>
+          {/* Exact User Introduction Text */}
+          <div className="space-y-4 font-body text-sm sm:text-base leading-relaxed text-gray-900">
+            <p className="font-medium text-slate-900 text-base sm:text-lg">
+              I’m a Computer Science Engineering student and problem solver who enjoys building things and figuring out how they work.
+            </p>
 
-            {/* Diorama Caption */}
-            <div className="mt-3 flex items-center space-x-2">
-              <span className="font-minecraft text-[11px] text-slate-900 bg-white/80 px-3 py-1 border border-black/30 rounded shadow">
-                Daytime Overworld • Creeper & Friendly Pig Diorama
-              </span>
-            </div>
+            <p>
+              My core focus is <strong>Data Structures & Algorithms, Backend Development, and AI/ML</strong>. 
+              I primarily work with <strong>C++, Java, Spring Boot, React, PostgreSQL, and Python</strong>, and I enjoy turning ideas into practical, working projects.
+            </p>
 
+            <p>
+              From building backend systems like <strong>MessTrack</strong> to working on <strong>Green Fleet Optimizer</strong>, I like taking problems from an idea to an actual implementation.
+            </p>
+
+            <p className="text-gray-800">
+              I’m currently focused on sharpening my DSA skills, building stronger backend systems, and preparing myself for software engineering opportunities.
+            </p>
+
+            {/* Tagline */}
+            <div className="pt-2 font-minecraft text-xs sm:text-sm text-[#244e19] bg-[#d9c59c] p-3 border-2 border-[#8C6D3F] shadow-inner inline-block">
+              ⚡ Code. Build. Break. Learn. Repeat.
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex flex-wrap gap-3 pt-6 mt-6 border-t-2 border-[#8C6D3F]/50">
+            <button
+              onClick={() => scrollTo('projects')}
+              className="mc-btn-green px-5 py-3 font-minecraft text-xs sm:text-sm flex items-center space-x-2"
+            >
+              <Sword className="w-4 h-4" />
+              <span>EXPLORE PROJECTS</span>
+            </button>
+
+            <button
+              onClick={() => {
+                sound.playClick();
+                onOpenResume();
+              }}
+              className="mc-btn-diamond px-5 py-3 font-minecraft text-xs sm:text-sm flex items-center space-x-2"
+            >
+              <Download className="w-4 h-4" />
+              <span>RESUME</span>
+            </button>
+
+            <button
+              onClick={() => scrollTo('contact')}
+              className="mc-btn-stone px-5 py-3 font-minecraft text-xs sm:text-sm flex items-center space-x-2"
+            >
+              <Terminal className="w-4 h-4" />
+              <span>CONTACT</span>
+            </button>
           </div>
 
         </div>
+
       </div>
 
-      {/* 4. GROUND TRANSITION (Grass block edge) */}
-      <div className="w-full h-8 bg-[#5B8C32] border-t-4 border-[#3E6120] relative z-20">
-        <div className="w-full h-2 bg-[#866043]" />
+      {/* 3. SEAMLESS OVERWORLD GROUND WITH CREEPER & PIG IN THE SCENERY */}
+      <div className="relative w-full z-20">
+        
+        {/* Creeper standing on the grass (Integrated naturally into background/terrain without any box!) */}
+        <div 
+          onClick={handleCreeperClick}
+          className="absolute -top-16 right-8 sm:right-24 z-30 cursor-pointer flex flex-col items-center group select-none"
+          title="Click the Creeper to hear it hiss!"
+        >
+          {creeperHiss && (
+            <div className="bg-black/90 border-2 border-red-500 text-red-400 font-minecraft text-[10px] px-2 py-1 mb-1 animate-bounce">
+              💥 SSSSSSSS...!
+            </div>
+          )}
+          {/* Pixel Creeper Sprite */}
+          <div className="w-10 h-16 flex flex-col items-center group-hover:scale-110 transition-transform">
+            {/* Head with iconic face */}
+            <div className="w-8 h-8 bg-[#43A047] border border-black relative shadow">
+              {/* Eyes */}
+              <div className="absolute top-1.5 left-1 w-2 h-2 bg-black" />
+              <div className="absolute top-1.5 right-1 w-2 h-2 bg-black" />
+              {/* Nose/Mouth Frown */}
+              <div className="absolute top-3.5 left-3 w-2 h-2 bg-black" />
+              <div className="absolute top-4.5 left-2 w-1.5 h-3 bg-black" />
+              <div className="absolute top-4.5 right-2 w-1.5 h-3 bg-black" />
+            </div>
+            {/* Body */}
+            <div className="w-6 h-6 bg-[#388E3C] border-x border-black" />
+            {/* 4 Legs */}
+            <div className="w-7 h-2 flex justify-between">
+              <div className="w-3 h-2 bg-[#2E7D32] border border-black" />
+              <div className="w-3 h-2 bg-[#2E7D32] border border-black" />
+            </div>
+          </div>
+          <span className="font-minecraft text-[8px] text-white bg-black/60 px-1 py-0.5 mt-1 border border-white/20">
+            Creeper
+          </span>
+        </div>
+
+        {/* Friendly Pig on the Left Ground */}
+        <div 
+          onClick={() => sound.playPop()}
+          className="absolute -top-12 left-6 sm:left-20 z-30 cursor-pointer flex flex-col items-center group select-none hidden sm:flex"
+          title="Friendly Overworld Pig"
+        >
+          <div className="w-12 h-8 flex flex-col items-center group-hover:scale-110 transition-transform">
+            <div className="flex items-center">
+              {/* Head & Snout */}
+              <div className="w-5 h-5 bg-[#F8A5C2] border border-black relative">
+                <div className="absolute top-1 left-0.5 w-1 h-1 bg-black" />
+                <div className="absolute top-1 right-0.5 w-1 h-1 bg-black" />
+                <div className="absolute bottom-0.5 left-1 w-3 h-1.5 bg-[#E77F9D] border border-black" />
+              </div>
+              {/* Body */}
+              <div className="w-7 h-5 bg-[#F8A5C2] border border-black" />
+            </div>
+            {/* Legs */}
+            <div className="w-10 h-2 flex justify-between px-1">
+              <div className="w-1.5 h-2 bg-[#E77F9D] border border-black" />
+              <div className="w-1.5 h-2 bg-[#E77F9D] border border-black" />
+              <div className="w-1.5 h-2 bg-[#E77F9D] border border-black" />
+              <div className="w-1.5 h-2 bg-[#E77F9D] border border-black" />
+            </div>
+          </div>
+          <span className="font-minecraft text-[8px] text-white bg-black/60 px-1 py-0.5 mt-1 border border-white/20">
+            Pig
+          </span>
+        </div>
+
+        {/* Grass Block Ground Border */}
+        <div className="w-full h-8 bg-[#5B8C32] border-t-4 border-[#3E6120]">
+          <div className="w-full h-2 bg-[#866043]" />
+        </div>
+
       </div>
 
     </section>
