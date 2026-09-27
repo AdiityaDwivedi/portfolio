@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { sound } from '../utils/audio';
-import { Mail, Phone, Send, Copy, Check, MessageSquare } from 'lucide-react';
+import { Mail, Phone, Send, Copy, Check } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export default function ContactChat() {
@@ -36,110 +36,98 @@ export default function ContactChat() {
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
-        <div className="text-center mb-12 space-y-2">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-black border border-mc-green/50 text-mc-green font-minecraft text-xs">
-            <span>MULTIPLAYER CHAT & SIGNBOARD</span>
+        <div className="text-center mb-10 space-y-2">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-black border border-white/20 text-mc-green font-minecraft text-xs">
+            <span>CONTACT</span>
           </div>
           <h2 className="font-minecraft text-2xl sm:text-4xl text-white tracking-wide">
-            CONNECT WITH ADITYA
+            GET IN TOUCH
           </h2>
-          <p className="text-gray-400 font-mono text-sm max-w-lg mx-auto">
-            Ready to craft remarkable software together? Send an in-game whisper or contact via communication channels.
+          <p className="text-gray-400 font-mono text-xs sm:text-sm max-w-md mx-auto">
+            Have a project, role, or question? Send a message or reach out directly.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* LEFT: IN-GAME CHAT TERMINAL */}
-          <div className="lg:col-span-7 bg-[#111111] border-4 border-[#373737] p-4 sm:p-6 shadow-2xl flex flex-col justify-between">
-            <div>
-              {/* Chat Window Top Bar */}
-              <div className="flex items-center justify-between border-b-2 border-white/10 pb-3 mb-4 font-minecraft text-xs">
-                <span className="text-white flex items-center space-x-2">
-                  <span className="w-2.5 h-2.5 bg-mc-green rounded-full inline-block animate-pulse" />
-                  <span>CHAT CHANNEL: [GLOBAL]</span>
-                </span>
-                <span className="text-gray-400 text-[10px]">PING: 18ms</span>
-              </div>
+          {/* LEFT: CLEAN DIRECT MESSAGE FORM */}
+          <div className="lg:col-span-7 bg-[#141414] border-4 border-[#333333] p-5 sm:p-7 shadow-2xl">
+            {/* Header Bar */}
+            <div className="flex items-center justify-between border-b-2 border-white/10 pb-3 mb-5 font-minecraft text-xs">
+              <span className="text-white flex items-center space-x-2">
+                <Send className="w-4 h-4 text-mc-green" />
+                <span>SEND A MESSAGE</span>
+              </span>
+              <span className="text-mc-green text-[10px] flex items-center space-x-1.5">
+                <span className="w-2 h-2 bg-mc-green rounded-full inline-block animate-pulse" />
+                <span>INBOX OPEN</span>
+              </span>
+            </div>
 
-              {/* Chat Log History */}
-              <div className="space-y-3 font-mono text-xs sm:text-sm bg-black/60 p-4 border border-white/10 mb-6 max-h-60 overflow-y-auto">
-                <div className="text-yellow-400">
-                  <span className="text-gray-400">[System]:</span> Welcome to Aditya's Overworld!
-                </div>
-                <div className="text-[#55FF55]">
-                  <span className="text-mc-diamond">[Aditya]:</span> Hey there! I'm actively looking for Backend & Full-Stack software engineering opportunities.
-                </div>
-                <div className="text-gray-300">
-                  <span className="text-mc-diamond">[Aditya]:</span> Type your message below to send me a direct whisper via email!
-                </div>
-              </div>
-
-              {/* Message Composer Form */}
-              <form onSubmit={handleSendMessage} className="space-y-3">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-[10px] font-minecraft text-gray-300 mb-1">
-                      YOUR NAME / HANDLE:
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={senderName}
-                      onChange={(e) => setSenderName(e.target.value)}
-                      placeholder="e.g. Recruiter / Alex"
-                      className="w-full bg-black/80 border-2 border-white/20 px-3 py-2 text-white text-xs font-mono focus:border-mc-green focus:outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[10px] font-minecraft text-gray-300 mb-1">
-                      YOUR EMAIL / CONTACT:
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={senderEmail}
-                      onChange={(e) => setSenderEmail(e.target.value)}
-                      placeholder="e.g. contact@company.com"
-                      className="w-full bg-black/80 border-2 border-white/20 px-3 py-2 text-white text-xs font-mono focus:border-mc-green focus:outline-none"
-                    />
-                  </div>
-                </div>
-
+            {/* Direct Form */}
+            <form onSubmit={handleSendMessage} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] font-minecraft text-gray-300 mb-1">
-                    COMMAND / MESSAGE (/msg Aditya):
+                  <label className="block text-[11px] font-minecraft text-gray-300 mb-1.5">
+                    NAME
                   </label>
-                  <textarea
-                    rows={3}
+                  <input
+                    type="text"
                     required
-                    value={chatMessage}
-                    onChange={(e) => setChatMessage(e.target.value)}
-                    placeholder="Hey Aditya, let's talk about our open backend engineering role..."
-                    className="w-full bg-black/80 border-2 border-white/20 p-3 text-white text-xs font-mono focus:border-mc-green focus:outline-none resize-none"
+                    value={senderName}
+                    onChange={(e) => setSenderName(e.target.value)}
+                    placeholder="Your name"
+                    className="w-full bg-black/80 border-2 border-white/20 px-3.5 py-2.5 text-white text-xs font-mono focus:border-mc-green focus:outline-none transition-colors"
                   />
                 </div>
+                <div>
+                  <label className="block text-[11px] font-minecraft text-gray-300 mb-1.5">
+                    EMAIL
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={senderEmail}
+                    onChange={(e) => setSenderEmail(e.target.value)}
+                    placeholder="your.email@example.com"
+                    className="w-full bg-black/80 border-2 border-white/20 px-3.5 py-2.5 text-white text-xs font-mono focus:border-mc-green focus:outline-none transition-colors"
+                  />
+                </div>
+              </div>
 
-                <button
-                  type="submit"
-                  className="mc-btn-green w-full py-3 text-xs font-minecraft flex items-center justify-center space-x-2"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>TRANSMIT MESSAGE / SEND EMAIL</span>
-                </button>
-              </form>
-            </div>
+              <div>
+                <label className="block text-[11px] font-minecraft text-gray-300 mb-1.5">
+                  MESSAGE
+                </label>
+                <textarea
+                  rows={4}
+                  required
+                  value={chatMessage}
+                  onChange={(e) => setChatMessage(e.target.value)}
+                  placeholder="Hey Aditya, let's talk about..."
+                  className="w-full bg-black/80 border-2 border-white/20 p-3.5 text-white text-xs font-mono focus:border-mc-green focus:outline-none resize-none transition-colors"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="mc-btn-green w-full py-3 text-xs font-minecraft flex items-center justify-center space-x-2 shadow-lg"
+              >
+                <Send className="w-4 h-4" />
+                <span>SEND MESSAGE</span>
+              </button>
+            </form>
           </div>
 
-          {/* RIGHT: MINECRAFT WOODEN SIGNBOARDS / QUICK CONTACTS */}
-          <div className="lg:col-span-5 space-y-4">
+          {/* RIGHT: DIRECT CONTACT CHANNELS */}
+          <div className="lg:col-span-5 space-y-3.5">
             
-            {/* Email Sign */}
-            <div className="bg-[#6d4c28] border-4 border-[#3e2b16] p-4 text-white shadow-xl relative group">
+            {/* Email */}
+            <div className="bg-[#1C1C1C] border-2 border-[#333333] hover:border-mc-green/60 p-4 text-white shadow-lg transition-all group">
               <div className="flex items-center justify-between mb-2">
-                <span className="font-minecraft text-xs text-[#FFF875] flex items-center space-x-2">
-                  <Mail className="w-4 h-4" />
-                  <span>OAK SIGN: DIRECT EMAIL</span>
+                <span className="font-minecraft text-xs text-white flex items-center space-x-2">
+                  <Mail className="w-4 h-4 text-mc-green" />
+                  <span>EMAIL</span>
                 </span>
                 <button
                   onClick={() => copyToClipboard(email, 'email')}
@@ -151,18 +139,18 @@ export default function ContactChat() {
               </div>
               <a
                 href={`mailto:${email}`}
-                className="font-mono text-sm text-gray-100 break-all hover:text-white underline block"
+                className="font-mono text-sm text-gray-300 break-all hover:text-white underline block"
               >
                 {email}
               </a>
             </div>
 
-            {/* Phone Sign */}
-            <div className="bg-[#6d4c28] border-4 border-[#3e2b16] p-4 text-white shadow-xl relative group">
+            {/* Phone */}
+            <div className="bg-[#1C1C1C] border-2 border-[#333333] hover:border-[#FFAA00]/60 p-4 text-white shadow-lg transition-all group">
               <div className="flex items-center justify-between mb-2">
-                <span className="font-minecraft text-xs text-[#FFF875] flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>OAK SIGN: TELEPHONE</span>
+                <span className="font-minecraft text-xs text-white flex items-center space-x-2">
+                  <Phone className="w-4 h-4 text-[#FFAA00]" />
+                  <span>PHONE</span>
                 </span>
                 <button
                   onClick={() => copyToClipboard(phone, 'phone')}
@@ -174,49 +162,55 @@ export default function ContactChat() {
               </div>
               <a
                 href={`tel:${phone}`}
-                className="font-mono text-sm text-gray-100 hover:text-white underline block"
+                className="font-mono text-sm text-gray-300 hover:text-white underline block"
               >
                 {phone}
               </a>
             </div>
 
-            {/* LinkedIn Sign */}
-            <div className="bg-[#2D4566] border-4 border-[#16273B] p-4 text-white shadow-xl">
+            {/* LinkedIn */}
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => sound.playClick()}
+              className="bg-[#1C1C1C] border-2 border-[#333333] hover:border-[#4DEEEA]/60 p-4 text-white shadow-lg block transition-all group"
+            >
               <div className="flex items-center justify-between mb-2">
-                <span className="font-minecraft text-xs text-[#4DEEEA] flex items-center space-x-2">
-                  <LinkedinIcon className="w-4 h-4" />
-                  <span>LINKEDIN GUILD</span>
+                <span className="font-minecraft text-xs text-white flex items-center space-x-2">
+                  <LinkedinIcon className="w-4 h-4 text-[#4DEEEA]" />
+                  <span>LINKEDIN</span>
+                </span>
+                <span className="font-minecraft text-[10px] text-[#4DEEEA] group-hover:translate-x-1 transition-transform">
+                  ➔
                 </span>
               </div>
-              <a
-                href={linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => sound.playClick()}
-                className="font-mono text-xs text-gray-200 hover:text-white underline break-all block"
-              >
-                linkedin.com/in/adiityadwivedi ➔
-              </a>
-            </div>
+              <span className="font-mono text-xs text-gray-300 group-hover:text-white underline break-all block">
+                linkedin.com/in/adiityadwivedi
+              </span>
+            </a>
 
-            {/* GitHub Sign */}
-            <div className="bg-[#2B2B2B] border-4 border-[#141414] p-4 text-white shadow-xl">
+            {/* GitHub */}
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => sound.playClick()}
+              className="bg-[#1C1C1C] border-2 border-[#333333] hover:border-mc-emerald/60 p-4 text-white shadow-lg block transition-all group"
+            >
               <div className="flex items-center justify-between mb-2">
-                <span className="font-minecraft text-xs text-mc-emerald flex items-center space-x-2">
-                  <GithubIcon className="w-4 h-4" />
-                  <span>GITHUB VAULT</span>
+                <span className="font-minecraft text-xs text-white flex items-center space-x-2">
+                  <GithubIcon className="w-4 h-4 text-mc-emerald" />
+                  <span>GITHUB</span>
+                </span>
+                <span className="font-minecraft text-[10px] text-mc-emerald group-hover:translate-x-1 transition-transform">
+                  ➔
                 </span>
               </div>
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => sound.playClick()}
-                className="font-mono text-xs text-gray-200 hover:text-white underline break-all block"
-              >
-                github.com/AdiityaDwivedi ➔
-              </a>
-            </div>
+              <span className="font-mono text-xs text-gray-300 group-hover:text-white underline break-all block">
+                github.com/AdiityaDwivedi
+              </span>
+            </a>
 
           </div>
 

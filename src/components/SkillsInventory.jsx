@@ -88,9 +88,9 @@ export default function SkillsInventory() {
       rarity: 'Legendary',
       rarityColor: 'text-[#FFAA00]',
       icon: '⚡',
-      level: 'Advanced',
-      lore: 'Weapon of choice for high-speed algorithmic problem solving and 500+ competitive programming questions.',
-      details: ['STL Algorithms', 'Pointer Arithmetic', 'Time/Space Optimization']
+      level: 'Proficient',
+      lore: 'Primary language used for algorithmic problem solving and competitive programming.',
+      details: ['STL Algorithms', 'Pointer Arithmetic', 'Problem Solving']
     },
     {
       name: 'JavaScript',
@@ -126,8 +126,8 @@ export default function SkillsInventory() {
       rarity: 'Epic',
       rarityColor: 'text-[#AA00AA]',
       icon: '🐘',
-      level: 'Advanced',
-      lore: 'Relational database engine with complex querying, indexing, and JPA/Hibernate relationships.',
+      level: 'Proficient',
+      lore: 'Relational database engine with querying, indexing, and JPA/Hibernate relationships.',
       details: ['Relational Schema Design', 'JPA/Hibernate ORM', 'ACID Compliance']
     },
     {
@@ -139,7 +139,7 @@ export default function SkillsInventory() {
       rarityColor: 'text-[#55FFFF]',
       icon: '🐬',
       level: 'Proficient',
-      lore: 'High-speed relational data store for structured data, joins, and transactions.',
+      lore: 'Relational data store for structured tables, joins, and transactions.',
       details: ['SQL Queries', 'Constraints & Foreign Keys', 'Stored Procedures']
     },
 
@@ -152,9 +152,9 @@ export default function SkillsInventory() {
       rarity: 'Legendary',
       rarityColor: 'text-[#FFAA00]',
       icon: '⚔️',
-      level: 'Expert (500+ Solved)',
-      lore: 'Mastery over Arrays, Trees, Graphs, DP, Binary Search, and Greedy algorithms across LeetCode & Codeforces.',
-      details: ['LeetCode Profile', 'Codeforces Profile', 'Graph Theory', 'Dynamic Programming']
+      level: 'Active Practice',
+      lore: 'Regular practice with arrays, trees, graphs, dynamic programming, and binary search.',
+      details: ['LeetCode Practice', 'Codeforces Rounds', 'Graph Algorithms', 'Dynamic Programming']
     },
     {
       name: 'Object-Oriented Programming (OOP)',
@@ -243,13 +243,13 @@ export default function SkillsInventory() {
         {/* Section Header */}
         <div className="text-center mb-10 space-y-2">
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#1E1E1E] border border-mc-diamond/40 text-mc-diamond font-minecraft text-xs">
-            <span>INVENTORY INSPECTION</span>
+            <span>SKILLS & TOOLS</span>
           </div>
           <h2 className="font-minecraft text-2xl sm:text-4xl text-white tracking-wide">
-            PLAYER ARSENAL & SKILLS
+            TECHNICAL SKILLS
           </h2>
-          <p className="text-gray-300 font-mono text-sm max-w-xl mx-auto">
-            Hover over an inventory slot to inspect skill lore, durability, and practical battlefield applications.
+          <p className="text-gray-300 font-mono text-xs sm:text-sm max-w-xl mx-auto">
+            Languages, frameworks, databases, and core concepts. Hover or tap any slot for details.
           </p>
         </div>
 

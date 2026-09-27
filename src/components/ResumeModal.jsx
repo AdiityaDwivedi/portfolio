@@ -88,26 +88,6 @@ export default function ResumeModal({ isOpen, onClose }) {
             </div>
           </div>
 
-          {/* Education */}
-          <div>
-            <h3 className="font-minecraft text-xs text-[#8C6D3F] uppercase border-b-2 border-[#8C6D3F]/60 pb-1 mb-2">
-              EDUCATION
-            </h3>
-            <div className="flex justify-between items-start text-xs font-mono">
-              <div>
-                <p className="font-bold text-gray-900 text-sm">Bakhtiyarpur College of Engineering</p>
-                <p className="text-gray-700">Bachelor of Technology – Computer Science Engineering (IoT)</p>
-                <p className="text-gray-600">Patna, Bihar</p>
-              </div>
-              <div className="text-right">
-                <span className="font-bold text-gray-900 bg-amber-200/80 px-2 py-0.5 border border-amber-400">
-                  CGPA: 7.4
-                </span>
-                <p className="text-gray-600 mt-1">2024 – 2028</p>
-              </div>
-            </div>
-          </div>
-
           {/* Projects */}
           <div>
             <h3 className="font-minecraft text-xs text-[#8C6D3F] uppercase border-b-2 border-[#8C6D3F]/60 pb-1 mb-2">
@@ -136,7 +116,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                 </div>
                 <ul className="list-disc list-inside text-xs text-gray-800 space-y-0.5 leading-relaxed font-sans">
                   <li>Built full-stack hostel mess management system with React, Spring Boot, and PostgreSQL with RESTful APIs.</li>
-                  <li>Implemented JWT authentication, BCrypt password hashing, and role-based access control for Students, Hostel Admins, and Super Admins.</li>
+                  <li>Implemented JWT authentication, BCrypt password hashing, and role-based access control for Students and Admins.</li>
                   <li>Developed menu, announcements, polls, and voting modules with protected CRUD operations.</li>
                   <li>Implemented one-vote-per-user validation and poll expiry checks for the voting system.</li>
                 </ul>
@@ -146,7 +126,7 @@ export default function ResumeModal({ isOpen, onClose }) {
               <div>
                 <div className="flex flex-wrap justify-between items-baseline mb-1">
                   <span className="font-bold text-gray-900 text-sm">
-                    Job Tracker API | Enterprise Application Backend
+                    Job Tracker API | Application Backend
                   </span>
                   <a href="https://github.com/AdiityaDwivedi/job-tracker-api" target="_blank" rel="noreferrer" className="text-blue-800 underline text-xs font-mono font-bold">
                     GitHub Link
@@ -158,9 +138,8 @@ export default function ResumeModal({ isOpen, onClose }) {
                 <ul className="list-disc list-inside text-xs text-gray-800 space-y-0.5 leading-relaxed font-sans">
                   <li>Built a RESTful job tracking backend for managing users, companies, and job applications using Spring Boot and PostgreSQL.</li>
                   <li>Designed relational data models with JPA/Hibernate to manage relationships between entities.</li>
-                  <li>Implemented a layered architecture separating controllers, services, and persistence logic for maintainable backend development.</li>
+                  <li>Implemented a layered architecture separating controllers, services, and persistence logic.</li>
                   <li>Used DTOs to separate API request/response models from database entities and maintain clean API contracts.</li>
-                  <li>Implemented centralized exception handling with @ControllerAdvice and custom exceptions for consistent API error responses.</li>
                 </ul>
               </div>
             </div>
@@ -169,10 +148,10 @@ export default function ResumeModal({ isOpen, onClose }) {
           {/* Problem Solving */}
           <div>
             <h3 className="font-minecraft text-xs text-[#8C6D3F] uppercase border-b-2 border-[#8C6D3F]/60 pb-1 mb-2">
-              PROBLEM SOLVING & COMPETITIVE CODING
+              ALGORITHMIC PRACTICE & PROFILES
             </h3>
             <div className="text-xs font-mono text-gray-800 flex flex-wrap items-center justify-between">
-              <span><strong>Problems Solved:</strong> 500+ across LeetCode, Codeforces, AlgoZenith, and GeeksforGeeks</span>
+              <span>Practicing problem solving on LeetCode & Codeforces</span>
               <div className="space-x-3 mt-1 sm:mt-0">
                 <a href="https://leetcode.com/u/adiityadwivedi/" target="_blank" rel="noreferrer" className="text-amber-800 underline font-bold">
                   LeetCode Profile ➔
