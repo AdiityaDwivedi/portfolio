@@ -101,33 +101,6 @@ export default function App() {
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
       />
-
-      {/* FOOTER */}
-      <footer className="bg-[#141414] border-t-4 border-black py-8 px-4 text-center font-minecraft text-xs text-gray-400 relative z-10">
-        <div className="max-w-4xl mx-auto space-y-2">
-          <p className="text-gray-300">
-            Aditya • Problem Solver & Developer
-          </p>
-          <p className="text-gray-500 text-[10px]">
-            Designed with authentic Minecraft UI & Overworld aesthetics • React & Tailwind
-          </p>
-          <div className="pt-2">
-            <button 
-              onClick={() => {
-                sound.playOrb();
-                if (currentProject) {
-                  handleBackToBuilds();
-                } else {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-              }}
-              className="text-mc-diamond hover:underline text-[10px]"
-            >
-              [⬆ RESPAWN AT SPAWN POINT]
-            </button>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
