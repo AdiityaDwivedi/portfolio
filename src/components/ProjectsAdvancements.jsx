@@ -3,19 +3,37 @@ import { sound } from '../utils/audio';
 
 export const projectsData = [
   {
+    id: 'notified',
+    title: 'NOTIFIED — STREAMING MICROSERVICES',
+    subtitle: 'Event-Driven Video Streaming & Transcoding Architecture',
+    category: 'Distributed Microservices',
+    shortDescription: 'A 4-microservice event-driven video streaming backend using Spring Boot, Apache Kafka, FFmpeg, Redis caching, AWS S3, and Docker.',
+    features: [
+      'Architected a 4-microservice backend (Content, Video, Encoding, Streaming) using Spring Boot and Apache Kafka, decoupling CPU-intensive video processing from API requests to eliminate HTTP upload timeouts common in monolithic setups.',
+      'Built an asynchronous transcoding pipeline using Kafka events (VideoUploaded, VideoEncoded) and FFmpeg to convert raw uploads into 4 adaptive bitrate (ABR) profiles and upload HLS segments directly to AWS S3.',
+      'Integrated Redis caching in the streaming service to serve playback manifests and metadata with sub-10ms cache hits, reducing redundant database and S3 lookups compared to uncached vanilla REST endpoints.',
+      'Engineered a fault-tolerant movie lifecycle state machine (Processing, Ready, Failed, Deleted) persisted in MySQL/TiDB, and containerized all services with Docker Compose and Render Blueprints.'
+    ],
+    tags: ['SPRING BOOT', 'APACHE KAFKA', 'REDIS', 'AWS S3', 'FFMPEG', 'DOCKER', 'MYSQL / TIDB', 'RENDER'],
+    thought: 'CPU-heavy video transcoding blocks HTTP threads and causes timeouts in traditional monoliths. Notified decouples upload ingestion from FFmpeg encoding over Kafka events while serving HLS playback manifests in under 10ms via Redis.',
+    githubUrl: null,
+    liveUrl: null,
+    status: 'MICROSERVICES',
+    borderAccent: 'hover:border-[#FFAA00]'
+  },
+  {
     id: 'messtrack',
     title: 'MESSTRACK — HOSTEL MANAGEMENT',
     subtitle: 'Hostel Mess Management & Polling System',
     category: 'Full-Stack Web App',
-    shortDescription: 'A full-stack hostel mess management system with secure authentication, real-time polling, and menu administration.',
+    shortDescription: 'A full-stack hostel mess management platform with JWT auth, 3-tier RBAC, daily menus, announcements, and live student voting.',
     features: [
-      'Built full-stack architecture with React frontend and Spring Boot REST backend communicating via secured JSON contracts.',
-      'Implemented JWT authentication, BCrypt encryption, and Role-Based Access Control for Students and Admins.',
-      'Engineered dynamic menu management, broadcast announcements, and student feedback loops.',
-      'Developed robust voting/polling engine with one-vote-per-user validation and automated poll expiry schedules.'
+      'Developed a full-stack hostel mess management platform with REST APIs for managing daily menus, announcements, polls, and live student voting.',
+      'Implemented JWT authentication, BCrypt password hashing, and 3-tier Role-Based Access Control (RBAC) via Spring Security for Students, Hostel Admins, and Super Admins.',
+      'Built server-side voting validation to prevent duplicate votes and reject submissions on expired polls, integrating the React frontend via Axios.'
     ],
-    tags: ['REACT', 'SPRING BOOT', 'POSTGRESQL', 'JWT', 'BCRYPT', 'REST APIS', 'RBAC'],
-    thought: 'Hostel meal scheduling and food quality complaints were traditionally managed with chaotic paper logs and messages. MessTrack was designed to digitize meal voting and bring transparent accountability to campus residences.',
+    tags: ['REACT', 'SPRING BOOT', 'SPRING SECURITY', 'POSTGRESQL', 'JWT', 'BCRYPT', '3-TIER RBAC', 'AXIOS'],
+    thought: 'Hostel meal scheduling and food quality feedback were traditionally handled with scattered messages and manual logs. MessTrack digitizes daily menus, announcements, and tamper-proof poll voting with role-based access.',
     githubUrl: 'https://github.com/AdiityaDwivedi/messtrack',
     liveUrl: 'https://messtrack-three.vercel.app/',
     status: 'ONLINE',
@@ -26,38 +44,18 @@ export const projectsData = [
     title: 'JOB TRACKER API — PIPELINE',
     subtitle: 'Career & Application Pipeline Engine',
     category: 'Backend REST API',
-    shortDescription: 'A high-throughput Spring Boot REST backend engineered to track, manage, and audit corporate job applications and interview stages.',
+    shortDescription: 'A Spring Boot REST backend engineered with layered architecture, DTO mapping, and @ControllerAdvice error handling to track job pipelines.',
     features: [
-      'Designed normalized relational data schemas using JPA/Hibernate to manage multi-tiered relationships between Users, Companies, and Applications.',
-      'Engineered strict 3-tier layered architecture segregating Controllers, Business Logic Services, and Persistence Repositories.',
-      'Decoupled domain models using Data Transfer Objects (DTOs) for clean API contracts and payload hygiene.',
-      'Centralized global exception handling using @ControllerAdvice and custom domain exceptions for standardized API error diagnostics.'
+      'Built a RESTful backend API to track job applications and company pipelines using layered architecture (Controllers, Services, Repositories) and Spring Data JPA.',
+      'Designed relational data models with JPA/Hibernate and PostgreSQL to manage relationships across users, companies, and application stages.',
+      'Implemented DTO mapping to decouple API contracts from database entities and centralized error handling using @ControllerAdvice.'
     ],
     tags: ['JAVA', 'SPRING BOOT', 'POSTGRESQL', 'JPA / HIBERNATE', 'DTO PATTERN', '@CONTROLLERADVICE'],
-    thought: 'Applying to dozens of engineering opportunities across platforms makes tracking application status difficult. This backend service models recruitment stages, interview notes, and deadlines into a structured relational API.',
+    thought: 'Applying across multiple platforms makes tracking interview stages difficult. This backend models company pipelines, application statuses, and structured error diagnostics with clean layered separation.',
     githubUrl: 'https://github.com/AdiityaDwivedi/job-tracker-api',
     liveUrl: null,
     status: 'REPO LIVE',
     borderAccent: 'hover:border-[#4DEEEA]'
-  },
-  {
-    id: 'green-fleet',
-    title: 'GREEN FLEET — ROUTE OPTIMIZER',
-    subtitle: 'Logistics Route & Carbon Emission Optimization',
-    category: 'Algorithms & Logistics',
-    shortDescription: 'An algorithmic system engineered to optimize commercial delivery routes, reduce vehicle fuel consumption, and monitor carbon emission metrics.',
-    features: [
-      'Explores graph-based pathfinding and heuristics for multi-stop vehicle delivery routes.',
-      'Calculates carbon footprint estimates based on distance, cargo weight, and vehicle fuel efficiency.',
-      'Models load optimization algorithms to maximize delivery vehicle capacity utilization.',
-      'Designed to transform theoretical graph optimization logic into a practical logistics dashboard.'
-    ],
-    tags: ['PYTHON', 'C++', 'GRAPH ALGORITHMS', 'ROUTE OPTIMIZATION', 'HEURISTICS', 'DATA MODELING'],
-    thought: 'Commercial delivery logistics generate significant fuel waste on suboptimal multi-stop paths. This project explores practical pathfinding algorithms to plan smarter routes and calculate carbon savings.',
-    githubUrl: 'https://github.com/AdiityaDwivedi',
-    liveUrl: null,
-    status: 'IN PROGRESS',
-    borderAccent: 'hover:border-[#FFAA00]'
   }
 ];
 
@@ -82,7 +80,7 @@ export default function ProjectsAdvancements({ onSelectProject }) {
             PROJECTS & ADVANCEMENTS
           </h2>
           <p className="text-gray-400 font-mono text-xs sm:text-sm max-w-xl mx-auto">
-            Practical systems, APIs, and algorithms. Click any card to inspect full architecture details.
+            Event-driven microservices, full-stack systems, and REST APIs. Click any card to inspect full architecture details.
           </p>
         </div>
 

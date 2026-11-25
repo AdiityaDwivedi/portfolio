@@ -33,10 +33,13 @@ export default function Hero({ onOpenResume }) {
       </div>
 
       {/* Official Minecraft Style Tagline (Left-Aligned) */}
-      <div className="relative z-10 pt-4 select-none ml-4 sm:ml-12 lg:ml-20">
+      <div className="relative z-10 pt-4 select-none ml-4 sm:ml-12 lg:ml-20 pr-4">
         <h2 className="font-minecraft text-base sm:text-xl lg:text-2xl text-white tracking-widest uppercase drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]">
           CREATE. SOLVE. BUILD.
         </h2>
+        <p className="font-minecraft text-[10px] sm:text-xs text-[#55FF55] tracking-wider mt-1.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+          BACKEND DEVELOPER • JAVA • SPRING BOOT • DISTRIBUTED SYSTEMS
+        </p>
       </div>
 
       {/* 2. MAIN CONTENT (EXACTLY SIZED TO HEADING WIDTH) */}

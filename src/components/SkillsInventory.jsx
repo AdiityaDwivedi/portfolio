@@ -8,63 +8,98 @@ export default function SkillsInventory() {
 
   const categories = [
     { id: 'all', label: 'ALL ITEMS', icon: Layers },
-    { id: 'frameworks', label: 'FRAMEWORKS', icon: ShieldCheck },
+    { id: 'frameworks', label: 'BACKEND & WEB', icon: ShieldCheck },
     { id: 'languages', label: 'LANGUAGES', icon: Sparkles },
-    { id: 'databases', label: 'DATABASES', icon: Database },
+    { id: 'databases', label: 'DB & CACHING', icon: Database },
+    { id: 'tools', label: 'CLOUD & DEVOPS', icon: Wrench },
     { id: 'core', label: 'CORE CS', icon: BookOpen },
-    { id: 'tools', label: 'TOOLS', icon: Wrench },
   ];
 
   const skillsData = [
-    // AI / ML & Learning
-    {
-      name: 'AI & Machine Learning',
-      category: 'core',
-      stack: 32,
-      durability: 80,
-      rarity: 'Rare',
-      rarityColor: 'text-[#55FFFF]',
-      icon: '🧠',
-      level: 'Learning & Exploring',
-      lore: 'Studying foundational machine learning concepts, models, and Python for upcoming intelligent projects.',
-      details: ['ML Fundamentals', 'Python & Math', 'Upcoming AI Projects']
-    },
-    // Frameworks
+    // Backend & Web Frameworks
     {
       name: 'Spring Boot',
       category: 'frameworks',
       stack: 64,
-      durability: 96,
-      rarity: 'Epic',
-      rarityColor: 'text-[#AA00AA]',
+      durability: 98,
+      rarity: 'Legendary',
+      rarityColor: 'text-[#FFAA00]',
       icon: '🍃',
       level: 'Experienced',
-      lore: 'Java framework used to build RESTful APIs and backend services in MessTrack and Job Tracker.',
-      details: ['MessTrack backend', 'Job Tracker API', 'DTO mapping', '@ControllerAdvice']
+      lore: 'Primary Java framework powering event-driven microservices in Notified and REST backends in MessTrack and Job Tracker API.',
+      details: ['Notified Microservices', 'MessTrack Backend', 'Job Tracker API']
     },
     {
-      name: 'Spring Security',
+      name: 'Microservices',
       category: 'frameworks',
-      stack: 48,
-      durability: 88,
-      rarity: 'Rare',
-      rarityColor: 'text-[#55FFFF]',
-      icon: '🛡️',
-      level: 'Proficient',
-      lore: 'Security layer for JWT authentication, password hashing, and role-based access control.',
-      details: ['JWT Authentication', 'Role-Based Access (RBAC)', 'Protected CRUD']
+      stack: 64,
+      durability: 92,
+      rarity: 'Legendary',
+      rarityColor: 'text-[#FFAA00]',
+      icon: '🏗️',
+      level: 'Experienced',
+      lore: '4-service distributed architecture (Content, Video, Encoding, Streaming) decoupling heavy transcoding from HTTP request paths.',
+      details: ['Notified Architecture', 'State Machines', 'Fault Tolerance']
     },
     {
-      name: 'React.js',
+      name: 'Apache Kafka',
       category: 'frameworks',
       stack: 64,
       durability: 90,
       rarity: 'Epic',
       rarityColor: 'text-[#AA00AA]',
+      icon: '📨',
+      level: 'Proficient',
+      lore: 'Asynchronous event streaming backbone driving VideoUploaded and VideoEncoded workflows to eliminate upload timeouts.',
+      details: ['Event-Driven Pipelines', 'Async Transcoding', 'Service Decoupling']
+    },
+    {
+      name: 'Spring Security & JWT',
+      category: 'frameworks',
+      stack: 48,
+      durability: 90,
+      rarity: 'Epic',
+      rarityColor: 'text-[#AA00AA]',
+      icon: '🛡️',
+      level: 'Proficient',
+      lore: 'Stateless JWT authentication, BCrypt password hashing, and 3-tier Role-Based Access Control (RBAC).',
+      details: ['3-Tier RBAC', 'JWT Auth & BCrypt', 'Protected Endpoints']
+    },
+    {
+      name: 'Spring Data JPA & Hibernate',
+      category: 'frameworks',
+      stack: 64,
+      durability: 92,
+      rarity: 'Epic',
+      rarityColor: 'text-[#AA00AA]',
+      icon: '🧬',
+      level: 'Experienced',
+      lore: 'Relational persistence, entity relationships, DTO decoupling, and lifecycle state management across MySQL, PostgreSQL, and TiDB.',
+      details: ['Entity Relationships', 'DTO Contracts', 'Repository Layer']
+    },
+    {
+      name: 'REST APIs',
+      category: 'frameworks',
+      stack: 64,
+      durability: 96,
+      rarity: 'Legendary',
+      rarityColor: 'text-[#FFAA00]',
+      icon: '📦',
+      level: 'Advanced',
+      lore: 'Layered Controllers/Services/Repositories with DTO mapping, server-side validation, and @ControllerAdvice error handling.',
+      details: ['@ControllerAdvice', 'DTO Mapping', 'Axios Integration']
+    },
+    {
+      name: 'React.js',
+      category: 'frameworks',
+      stack: 64,
+      durability: 88,
+      rarity: 'Rare',
+      rarityColor: 'text-[#55FFFF]',
       icon: '⚛️',
       level: 'Proficient',
-      lore: 'Frontend library for building responsive user interfaces and single-page web apps.',
-      details: ['Component Architecture', 'State & Hooks', 'MessTrack Web App']
+      lore: 'Frontend library for building responsive single-page applications and connecting to Spring Boot APIs via Axios.',
+      details: ['MessTrack Frontend', 'Axios Integration', 'Component UI']
     },
 
     // Languages
@@ -76,21 +111,21 @@ export default function SkillsInventory() {
       rarity: 'Legendary',
       rarityColor: 'text-[#FFAA00]',
       icon: '☕',
-      level: 'Mastery',
-      lore: 'Primary language for enterprise backend architecture, multithreading, and OOP design patterns.',
-      details: ['Java 17/21', 'Generics & Streams', 'Concurrency', 'JVM Internals']
+      level: 'Primary',
+      lore: 'Primary language for backend engineering, Spring Boot microservices, OOP design, and production REST APIs.',
+      details: ['Spring Ecosystem', 'OOP & Concurrency', 'Microservices']
     },
     {
       name: 'C++',
       category: 'languages',
       stack: 64,
-      durability: 94,
+      durability: 95,
       rarity: 'Legendary',
       rarityColor: 'text-[#FFAA00]',
       icon: '⚡',
       level: 'Proficient',
-      lore: 'Primary language used for algorithmic problem solving and competitive programming.',
-      details: ['STL Algorithms', 'Pointer Arithmetic', 'Problem Solving']
+      lore: 'Primary competitive programming language used across 500+ algorithmic problems on LeetCode and Codeforces.',
+      details: ['STL & Algorithms', '500+ DSA Problems', 'Timed Contests']
     },
     {
       name: 'JavaScript',
@@ -101,49 +136,147 @@ export default function SkillsInventory() {
       rarityColor: 'text-[#55FFFF]',
       icon: '📜',
       level: 'Proficient',
-      lore: 'Client-side script engine driving interactive web applications and asynchronous API communication.',
-      details: ['ES6+ Syntax', 'Async/Await', 'DOM Manipulation']
+      lore: 'Client-side scripting for React interfaces, asynchronous API integration, and interactive web UIs.',
+      details: ['ES6+ & Async/Await', 'React UI', 'Axios Clients']
     },
     {
-      name: 'Python',
+      name: 'SQL',
       category: 'languages',
-      stack: 48,
-      durability: 86,
+      stack: 64,
+      durability: 90,
       rarity: 'Rare',
       rarityColor: 'text-[#55FFFF]',
-      icon: '🐍',
+      icon: '🧾',
       level: 'Proficient',
-      lore: 'Language for data processing, scripting, and machine learning exploration.',
-      details: ['Data Structures', 'AI/ML Prototyping', 'Automation']
+      lore: 'Relational querying, schema design, joins, constraints, and transactional persistence across SQL engines.',
+      details: ['Schema Design', 'Joins & Indexing', 'ACID Queries']
     },
 
-    // Databases
+    // Databases & Caching
     {
-      name: 'PostgreSQL',
+      name: 'Redis',
       category: 'databases',
       stack: 64,
       durability: 92,
       rarity: 'Epic',
       rarityColor: 'text-[#AA00AA]',
-      icon: '🐘',
+      icon: '🔴',
       level: 'Proficient',
-      lore: 'Relational database engine with querying, indexing, and JPA/Hibernate relationships.',
-      details: ['Relational Schema Design', 'JPA/Hibernate ORM', 'ACID Compliance']
+      lore: 'In-memory caching layer serving video playback manifests and metadata with sub-10ms cache hits in Notified.',
+      details: ['Sub-10ms Cache Hits', 'Manifest Caching', 'Reduced S3/DB Load']
+    },
+    {
+      name: 'PostgreSQL',
+      category: 'databases',
+      stack: 64,
+      durability: 94,
+      rarity: 'Epic',
+      rarityColor: 'text-[#AA00AA]',
+      icon: '🐘',
+      level: 'Experienced',
+      lore: 'Primary relational database powering MessTrack voting/RBAC data and Job Tracker API application pipelines.',
+      details: ['MessTrack DB', 'Job Tracker DB', 'JPA/Hibernate']
     },
     {
       name: 'MySQL',
       category: 'databases',
-      stack: 50,
-      durability: 85,
+      stack: 56,
+      durability: 88,
       rarity: 'Rare',
       rarityColor: 'text-[#55FFFF]',
       icon: '🐬',
       level: 'Proficient',
-      lore: 'Relational data store for structured tables, joins, and transactions.',
-      details: ['SQL Queries', 'Constraints & Foreign Keys', 'Stored Procedures']
+      lore: 'Relational database used to persist fault-tolerant movie lifecycle states and structured service records.',
+      details: ['Movie State Machine', 'Relational Tables', 'Transactions']
+    },
+    {
+      name: 'TiDB',
+      category: 'databases',
+      stack: 48,
+      durability: 85,
+      rarity: 'Rare',
+      rarityColor: 'text-[#55FFFF]',
+      icon: '🗄️',
+      level: 'Proficient',
+      lore: 'Distributed MySQL-compatible SQL database used in Notified for scalable, fault-tolerant state persistence.',
+      details: ['Distributed SQL', 'Notified Persistence', 'Cloud Deployment']
     },
 
-    // Core Concepts
+    // Cloud & DevOps
+    {
+      name: 'Docker & Compose',
+      category: 'tools',
+      stack: 64,
+      durability: 92,
+      rarity: 'Epic',
+      rarityColor: 'text-[#AA00AA]',
+      icon: '🐳',
+      level: 'Proficient',
+      lore: 'Containerized multi-service deployments orchestrating Spring Boot microservices, Kafka, Redis, and databases.',
+      details: ['Multi-Container Setup', 'Docker Compose', 'Notified Stack']
+    },
+    {
+      name: 'AWS S3',
+      category: 'tools',
+      stack: 56,
+      durability: 90,
+      rarity: 'Epic',
+      rarityColor: 'text-[#AA00AA]',
+      icon: '☁️',
+      level: 'Proficient',
+      lore: 'Object storage storing raw video uploads and multi-bitrate HLS video segments generated by the encoding pipeline.',
+      details: ['HLS Segment Storage', 'ABR Media Delivery', 'Direct Uploads']
+    },
+    {
+      name: 'FFmpeg',
+      category: 'tools',
+      stack: 48,
+      durability: 88,
+      rarity: 'Rare',
+      rarityColor: 'text-[#55FFFF]',
+      icon: '🎬',
+      level: 'Proficient',
+      lore: 'Media processing engine converting raw uploads into 4 adaptive bitrate (ABR) HLS streaming profiles.',
+      details: ['4 ABR Profiles', 'HLS Segmentation', 'Async Worker']
+    },
+    {
+      name: 'Render',
+      category: 'tools',
+      stack: 48,
+      durability: 86,
+      rarity: 'Rare',
+      rarityColor: 'text-[#55FFFF]',
+      icon: '🌐',
+      level: 'Proficient',
+      lore: 'Cloud hosting and infrastructure-as-code deployments via Render Blueprints for containerized services.',
+      details: ['Render Blueprints', 'Service Hosting', 'Docker Deploys']
+    },
+    {
+      name: 'Git & GitHub',
+      category: 'tools',
+      stack: 64,
+      durability: 96,
+      rarity: 'Epic',
+      rarityColor: 'text-[#AA00AA]',
+      icon: '🐙',
+      level: 'Advanced',
+      lore: 'Version control workflows, clean commit history, branching, and open-source collaboration.',
+      details: ['Branch Workflows', 'Code Reviews', 'Repo Management']
+    },
+    {
+      name: 'Maven & Postman',
+      category: 'tools',
+      stack: 64,
+      durability: 92,
+      rarity: 'Rare',
+      rarityColor: 'text-[#55FFFF]',
+      icon: '🚀',
+      level: 'Advanced',
+      lore: 'Java build/dependency management with Maven and end-to-end REST API testing and auth verification in Postman.',
+      details: ['Maven Builds', 'API Collections', 'Auth Testing']
+    },
+
+    // Core CS
     {
       name: 'Data Structures & Algorithms',
       category: 'core',
@@ -152,9 +285,9 @@ export default function SkillsInventory() {
       rarity: 'Legendary',
       rarityColor: 'text-[#FFAA00]',
       icon: '⚔️',
-      level: 'Active Practice',
-      lore: 'Regular practice with arrays, trees, graphs, dynamic programming, and binary search.',
-      details: ['LeetCode Practice', 'Codeforces Rounds', 'Graph Algorithms', 'Dynamic Programming']
+      level: '500+ Problems',
+      lore: '500+ problems solved across LeetCode, Codeforces, AlgoZenith, and GeeksforGeeks covering Graphs, Trees, and DP.',
+      details: ['Trees & Graphs', 'Dynamic Programming', 'Binary Search & Stacks']
     },
     {
       name: 'Object-Oriented Programming (OOP)',
@@ -165,70 +298,32 @@ export default function SkillsInventory() {
       rarityColor: 'text-[#AA00AA]',
       icon: '🧩',
       level: 'Advanced',
-      lore: 'Clean software engineering principles: Encapsulation, Polymorphism, Inheritance, Abstraction, and SOLID.',
-      details: ['Design Patterns', 'Polymorphism', 'Clean Architecture']
+      lore: 'SOLID principles, clean domain modeling, state machine patterns, and maintainable Java service layers.',
+      details: ['Design Patterns', 'State Machines', 'Clean Architecture']
     },
     {
       name: 'Database Management (DBMS)',
       category: 'core',
-      stack: 55,
+      stack: 56,
       durability: 90,
       rarity: 'Rare',
       rarityColor: 'text-[#55FFFF]',
-      icon: '🗄️',
+      icon: '🗂️',
       level: 'Proficient',
-      lore: 'Comprehensive understanding of normalization, indexing, concurrency control, and query optimization.',
-      details: ['Normalization (1NF-BCNF)', 'Indexing & B-Trees', 'Transactions & Locks']
+      lore: 'Normalization, indexing, ACID transactions, relational modeling, and query optimization.',
+      details: ['Normalization', 'Indexing', 'ACID Transactions']
     },
     {
-      name: 'Computer Networks & OS',
+      name: 'OS & Computer Networks',
       category: 'core',
-      stack: 45,
+      stack: 48,
       durability: 88,
       rarity: 'Rare',
       rarityColor: 'text-[#55FFFF]',
-      icon: '🌐',
+      icon: '🔌',
       level: 'Proficient',
-      lore: 'Deep knowledge of TCP/IP, HTTP/HTTPS protocols, processes, threads, memory management, and socket operations.',
-      details: ['TCP/IP & OSI Stack', 'Process Scheduling', 'Virtual Memory', 'REST Protocol']
-    },
-
-    // Tools
-    {
-      name: 'Git & GitHub',
-      category: 'tools',
-      stack: 64,
-      durability: 96,
-      rarity: 'Epic',
-      rarityColor: 'text-[#AA00AA]',
-      icon: '🐙',
-      level: 'Advanced',
-      lore: 'Version control mastery for branch management, pull requests, collaboration, and repository integrity.',
-      details: ['Branch Workflows', 'Merge Conflict Resolution', 'GitHub Actions']
-    },
-    {
-      name: 'Postman',
-      category: 'tools',
-      stack: 64,
-      durability: 92,
-      rarity: 'Rare',
-      rarityColor: 'text-[#55FFFF]',
-      icon: '🚀',
-      level: 'Advanced',
-      lore: 'API testing platform used for automated test suites, endpoint verification, header simulation, and documentation.',
-      details: ['REST Endpoint Testing', 'Auth Header Testing', 'Collection Runners']
-    },
-    {
-      name: 'RESTful API Architecture',
-      category: 'tools',
-      stack: 64,
-      durability: 95,
-      rarity: 'Legendary',
-      rarityColor: 'text-[#FFAA00]',
-      icon: '📦',
-      level: 'Advanced',
-      lore: 'Design of predictable, standard HTTP REST endpoints with clean URI schemas, status codes, and DTO contracts.',
-      details: ['Clean DTOs', 'Global Exception Handling', 'Resource URIs']
+      lore: 'TCP/IP, HTTP/HTTPS, processes, threads, concurrency, memory management, and distributed communication.',
+      details: ['HTTP & TCP/IP', 'Concurrency & Threads', 'Memory Management']
     }
   ];
 
@@ -249,7 +344,7 @@ export default function SkillsInventory() {
             TECHNICAL SKILLS
           </h2>
           <p className="text-gray-300 font-mono text-xs sm:text-sm max-w-xl mx-auto">
-            Languages, frameworks, databases, and core concepts. Hover or tap any slot for details.
+            Languages, backend frameworks, databases, caching, cloud tools, and core CS. Hover or tap any slot for details.
           </p>
         </div>
 

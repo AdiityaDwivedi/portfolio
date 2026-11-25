@@ -7,43 +7,43 @@ export default function AboutMe() {
   const qaItems = [
     {
       q: "What do I do?",
-      a: "I build backend systems, solve problems, and explore AI."
+      a: "I design backend systems, REST APIs, and event-driven microservices with Java & Spring Boot."
     },
     {
-      q: "What am I learning?",
-      a: "DSA, backend development, and AI/ML concepts."
+      q: "What's in my stack?",
+      a: "Spring Boot, Apache Kafka, Redis, Docker, AWS S3, PostgreSQL, MySQL, TiDB, and React."
     },
     {
-      q: "What do I enjoy?",
-      a: "Building things and turning ideas into clean working software."
+      q: "What am I studying?",
+      a: "B.Tech. in CSE (IoT) at Bakhtiyarpur College of Engineering, Bihar (2024 – 2028)."
+    },
+    {
+      q: "Problem solving?",
+      a: "Solved 500+ DSA problems across LeetCode, Codeforces, AlgoZenith, and GeeksforGeeks."
     },
     {
       q: "Why do I code?",
-      a: "It's fun when something that didn't work suddenly does."
+      a: "It's fun when something that didn't work suddenly does—especially at distributed scale."
     },
     {
       q: "When not coding?",
       a: "Gaming, working out, listening to music, or recharging."
     },
     {
-      q: "What do I care about?",
-      a: "Learning useful things and building stuff that actually works."
-    },
-    {
       q: "My coding philosophy?",
-      a: "Make it work → understand it → make it better."
+      a: "Make it work → decouple bottlenecks → make it fault-tolerant."
     },
     {
-      q: "My weakness?",
-      a: "Trying to learn too many things at once."
+      q: "What do I care about?",
+      a: "Clean architecture, sub-10ms cache hits, and software that actually holds up."
     },
     {
       q: "How do I code?",
-      a: "Usually with music on and way too many tabs open."
+      a: "Usually with music on, terminal splits open, and Docker Compose running."
     },
     {
       q: "What's next?",
-      a: "Keep learning, keep building, and see where it goes."
+      a: "Building deeper distributed systems and taking on high-impact backend engineering roles."
     }
   ];
 

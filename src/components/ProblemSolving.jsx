@@ -9,11 +9,11 @@ export default function ProblemSolving() {
       name: 'LeetCode',
       handle: '@adiityadwivedi',
       url: 'https://leetcode.com/u/adiityadwivedi/',
-      tag: 'DSA & PRACTICE',
+      tag: '500+ DSA PROBLEMS',
       icon: LeetCodeIcon,
       accentBorder: 'border-[#FFA116]',
       btnStyle: 'mc-btn-stone',
-      description: 'Practicing data structures, algorithmic puzzles, and backend logic.'
+      description: '500+ problems solved across LeetCode, Codeforces, AlgoZenith & GfG — Arrays, Trees, Graphs, Binary Search, and DP.'
     },
     {
       name: 'Codeforces',
@@ -23,7 +23,7 @@ export default function ProblemSolving() {
       icon: CodeforcesIcon,
       accentBorder: 'border-[#1890FF]',
       btnStyle: 'mc-btn-stone',
-      description: 'Participating in timed algorithmic rounds and exploring math/logic problems in C++.'
+      description: 'Participating in timed algorithmic rounds and solving math, graph, and dynamic programming challenges in C++.'
     },
     {
       name: 'GitHub',
@@ -33,7 +33,7 @@ export default function ProblemSolving() {
       icon: GithubIcon,
       accentBorder: 'border-[#55FF55]',
       btnStyle: 'mc-btn-green',
-      description: 'Code repositories, backend services, experimental AI projects, and utilities.'
+      description: 'Backend microservices, Spring Boot REST APIs, full-stack web applications, and DSA implementations.'
     },
     {
       name: 'LinkedIn',
